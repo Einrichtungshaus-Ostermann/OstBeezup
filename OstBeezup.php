@@ -3,10 +3,14 @@
 /**
  * Einrichtungshaus Ostermann GmbH & Co. KG - Beezup
  *
- * Adds the Beezup Tracking Pixel
+ * Adds the Beezup Tracking Pixel.
  *
  * 1.0.0
  * - initial release
+ *
+ * 1.0.1
+ * - added shop status configuration
+ * - cs-fix
  *
  * @package   OstBeezup
  *
@@ -38,8 +42,6 @@ class OstBeezup extends Plugin
         parent::build($container);
     }
 
-
-
     /**
      * Activate the plugin.
      *
@@ -50,8 +52,6 @@ class OstBeezup extends Plugin
         // clear complete cache after we activated the plugin
         $context->scheduleClearCache($context::CACHE_LIST_ALL);
     }
-
-
 
     /**
      * Install the plugin.
@@ -82,8 +82,6 @@ class OstBeezup extends Plugin
         parent::install($context);
     }
 
-
-
     /**
      * Update the plugin.
      *
@@ -101,8 +99,6 @@ class OstBeezup extends Plugin
         // call default updater
         parent::update($context);
     }
-
-
 
     /**
      * Uninstall the plugin.
