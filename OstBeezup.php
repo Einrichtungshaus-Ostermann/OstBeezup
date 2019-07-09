@@ -12,6 +12,9 @@
  * - added shop status configuration
  * - cs-fix
  *
+ * 1.0.2
+ * - fixed service ids
+ *
  * @package   OstBeezup
  *
  * @author    Tim Windelschmidt <tim.windelschmidt@ostermann.de>

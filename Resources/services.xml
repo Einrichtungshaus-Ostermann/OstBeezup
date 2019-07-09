@@ -11,13 +11,13 @@
         </service>
 
         <!-- frontend listeners -->
-        <service id="ost_beezup.listeners.frontend.checkout.pre_dispatch" class="OstBeezup\Listeners\Controllers\Frontend\Checkout">
+        <service id="ost_beezup.listeners.controllers.frontend.checkout.pre_dispatch" class="OstBeezup\Listeners\Controllers\Frontend\Checkout">
             <argument type="service" id="ost_beezup.configuration"/>
             <argument type="string">%ost_beezup.view_dir%</argument>
             <tag name="shopware.event_listener" method="onPreDispatch" event="Enlight_Controller_Action_PreDispatch_Frontend_Checkout"/>
         </service>
 
-        <service id="ost_beezup.listeners.frontend.checkout.post_dispatch" class="OstBeezup\Listeners\Controllers\Frontend\Checkout">
+        <service id="ost_beezup.listeners.controllers.frontend.checkout.post_dispatch" class="OstBeezup\Listeners\Controllers\Frontend\Checkout">
             <argument type="service" id="ost_beezup.configuration"/>
             <argument type="string">%ost_beezup.view_dir%</argument>
             <tag name="shopware.event_listener" method="onPostDispatch" event="Enlight_Controller_Action_PostDispatchSecure_Frontend_Checkout"/>
