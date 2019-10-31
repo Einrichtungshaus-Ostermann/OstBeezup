@@ -90,8 +90,10 @@ class Checkout
             return;
         }
 
+        // get the basket
         $basketContent = $view->getAssign('sBasket')['content'];
 
+        // data so set to view
         $data = [
             'ListProductId'        => [],
             'ListProductQuantity'  => [],
@@ -99,20 +101,23 @@ class Checkout
             'ListProductMargin'    => [],
         ];
 
+        // loop every article
         array_map(function (array $item) use (&$data) {
             $data['ListProductId'][] = $item['ordernumber'];
             $data['ListProductQuantity'][] = $item['quantity'];
-            $data['ListProductUnitPrice'][] = str_replace(',', '.', $item['amountnet']);
+            $data['ListProductUnitPrice'][] = str_replace(',', '.', $item['amount']);
         }, $basketContent);
 
+        // loop the data
         foreach ($data as $key => &$value) {
+            // and implode the data
             $value = implode('|', $value);
         }
 
-        unset($value);
-
+        // set the store id
         $data['storeId'] = $this->configuration['storeId'];
 
+        // and save to view
         $view->assign('ostBeezup', $data);
     }
 }

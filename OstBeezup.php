@@ -15,6 +15,9 @@
  * 1.0.2
  * - fixed service ids
  *
+ * 1.0.3
+ * - fixed gross/net prices
+ *
  * @package   OstBeezup
  *
  * @author    Tim Windelschmidt <tim.windelschmidt@ostermann.de>
